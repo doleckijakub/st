@@ -2,4 +2,6 @@ st
 *.o
 *.orig
 *.rej
-config.def.c
+config.def.h
+st.1
+st.info
