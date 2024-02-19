@@ -59,6 +59,7 @@ static void zoom(const Arg *);
 static void zoomabs(const Arg *);
 static void zoomreset(const Arg *);
 static void ttysend(const Arg *);
+static void togglealpha(const Arg *);
 
 /* config.h for applying patches and the configuration. */
 #include "config.h"
@@ -329,6 +330,14 @@ void
 ttysend(const Arg *arg)
 {
 	ttywrite(arg->s, strlen(arg->s), 1);
+}
+
+void
+togglealpha(const Arg *arg)
+{
+	alpha += arg->f;
+	xloadcols();
+	redraw();
 }
 
 int
